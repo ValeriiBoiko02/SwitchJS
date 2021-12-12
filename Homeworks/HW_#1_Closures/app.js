@@ -13,31 +13,7 @@ function runningAverage(){
 
 let rAvg = runningAverage()
 
-
-//((a*1 + b*1) /2)
-
-//console.log(rAvg(10))
-//console.log(rAvg(11))
-console.log(rAvg(100))
-console.log(rAvg(300))
-
-
-function sum(a) {
-
-    let currentSum = a;
-
-    function f(b) {
-        currentSum += b;
-        return f;
-    }
-
-    f.toString = function() {
-        return currentSum;
-    };
-
-    return f;
-}
-
-
-alert( sum(1,2));
-alert( sum(1)(2));
+console.log(rAvg(10))
+console.log(rAvg(11))
+console.log(rAvg(12))
+console.log(rAvg(12))
