@@ -1,35 +1,37 @@
 //Task#1
 function runningAverage() {
-    let currentSum = 0;
+    let num = 0;
 
-    function getAverage(num) {
-        if (currentSum === 0) {
-            currentSum = num;
-            return currentSum;
-        } else return (currentSum + num) / 2;
+   return (secondNum) => {
+        if (num === 0) {
+            num = secondNum;
+            return (num + secondNum) / 2;
+        } else{
+            return (num + secondNum) / 2;
+        }
     }
-    return getAverage
 }
 
 let rAvg = runningAverage()
-console.log(rAvg(100))
-console.log(rAvg(300))
+console.log(rAvg(10))
+console.log(rAvg(11))
+console.log(rAvg(12))
 
 
 //Task#2
-function sum(...arr){
-    let currentSum = arr.reduce((total, int) => {
+function mySum(...sum){
+    let result = sum.reduce((total, int) => {
         return total + int
     }, 0);
     function add (num) {
-        currentSum+=num;
+        result+=num;
         return add;
     }
     add.toString = function (){
-        return currentSum;
+        return result;
     }
     return add;
 }
 
-alert(sum(1)(2)(3)(100))
-alert(sum(50,50)(2)(3)(2))
+alert(mySum(1)(2)(3)(100))
+alert(mySum(50,50)(2)(3)(2))
