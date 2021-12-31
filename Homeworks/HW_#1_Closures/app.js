@@ -1,14 +1,12 @@
 //Task#1
 function runningAverage() {
-    let num = 0;
+    let acm = 0;
+    let counter = 0;
 
-   return (secondNum) => {
-        if (num === 0) {
-            num = secondNum;
-            return (num + secondNum) / 2;
-        } else{
-            return (num + secondNum) / 2;
-        }
+    return (num) => {
+        acm += num
+        counter++
+        return acm / counter
     }
 }
 
@@ -19,19 +17,21 @@ console.log(rAvg(12))
 
 
 //Task#2
-function mySum(...sum){
+function mySum(...sum) {
     let result = sum.reduce((total, int) => {
         return total + int
     }, 0);
-    function add (num) {
-        result+=num;
+
+    function add(num) {
+        result += num;
         return add;
     }
-    add.toString = function (){
+
+    add.toString = function () {
         return result;
     }
     return add;
 }
 
 alert(mySum(1)(2)(3)(100))
-alert(mySum(50,50)(2)(3)(2))
+alert(mySum(50, 50)(2)(3)(2))
