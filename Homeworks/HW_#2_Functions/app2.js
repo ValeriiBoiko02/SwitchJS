@@ -1,6 +1,5 @@
 function NamedOne(nameFirst, nameLast) {
-    const objectInfoPerson = {};
-    return Object.defineProperties(objectInfoPerson,
+    return Object.defineProperties(this,
         {
             'firstName': {
                 value: nameFirst,
@@ -16,15 +15,13 @@ function NamedOne(nameFirst, nameLast) {
                 },
                 set(value) {
                     let valueArray = value.split(" ")
+                    let [firstName, lastName] = valueArray
 
-                    if (valueArray[0] === this.firstName && valueArray[1] === this.lastName) {
-                        throw 'First name and last name were unchanged'
-                    } else if (valueArray.length === 1) {
-                        throw 'LastName missing'
-                    } else {
-                        this.firstName = valueArray[0]
-                        this.lastName = valueArray[1]
+                    if (valueArray !== 2) {
+                        return
                     }
+                    this.firstName = firstName
+                    this.lastName = lastName
                 }
             }
         }
@@ -32,10 +29,10 @@ function NamedOne(nameFirst, nameLast) {
 }
 
 
-var namedOne = new NamedOne("Naomi","Wang")
+var namedOne = new NamedOne("Naomi", "Wang")
 
 console.log(namedOne.firstName) // -> "Naomi"
-console.log(namedOne.lastName ) // -> "Wang"
+console.log(namedOne.lastName) // -> "Wang"
 console.log(namedOne.fullName) // -> "Naomi Wang"
 
 console.log('------------------------')
@@ -61,10 +58,6 @@ console.log(namedOne.fullName)
 namedOne.fullName = "Tom"
 // The second error - unchanged value
 namedOne.fullName = "Bill Smith"
-
-
-
-
 
 
 // if (arr.length === 2){
