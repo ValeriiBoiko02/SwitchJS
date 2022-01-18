@@ -42,18 +42,14 @@ class Vector {
         }, 0)
     }
 
-    toString() { //will be refactored in scope of another commit
-        return this.vectorArray.toString()
+    toString() {
+        let arrayToString = this.vectorArray.toString()
+        return (`'(${arrayToString})'`)
     }
 }
-// (1,2,3) will be
+
 
 const a = new Vector([1, 2, 3])
 const b = new Vector([3, 3, 3])
 
-
-console.log(a.add(b))
-// console.log(a.subtract(b))
-// console.log(a.dot(b))
-// console.log(b.norm())
-// console.log(a.toString())
+console.log(a.toString())
