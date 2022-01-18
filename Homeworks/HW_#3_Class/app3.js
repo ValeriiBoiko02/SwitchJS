@@ -1,57 +1,59 @@
 class Vector {
-    constructor(array) {
-        this.array = array;
+    constructor(vectorArray) {
+        this.vectorArray = vectorArray;
     }
 
-    add(inputArray) {
-        if (inputArray.array.length === this.array.length) {
-            return this.array.map(function (num, index) {
-                return inputArray.array[index] + num
-            })
+    #getValidVector(inputtedVector) {
+        if (inputtedVector.vectorArray.length === this.vectorArray.length) {
+            return true
         }
         throw "Error"
     }
 
-    subtract(inputArray) {
-        if (inputArray.array.length === this.array.length) {
-            return this.array.map(function (num, index) {
-                return inputArray.array[index] - num
-            })
-        }
-        throw "Error"
+    add(inputtedVector) {
+        this.#getValidVector(inputtedVector)
+        return this.vectorArray.map(function (num, index) {
+            return inputtedVector.vectorArray[index] + num
+        })
     }
 
-    dot(inputArray) {
-        if (inputArray.array.length === this.array.length) {
-            return this.array.map(function (num, index) {
-                return inputArray.array[index] * num
-            }).reduce((total, index) => {
-                total += index
-                return total
-            }, 0)
-        }
-        throw "Error"
+    subtract(inputtedVector) {
+        this.#getValidVector(inputtedVector)
+        return this.vectorArray.map(function (num, index) {
+            return inputtedVector.vectorArray[index] - num
+        })
+    }
+
+    dot(inputtedVector) {
+        this.#getValidVector(inputtedVector)
+
+        return this.vectorArray.map(function (num, index) {
+            return inputtedVector.vectorArray[index] * num
+        }).reduce((total, index) => {
+            total += index
+            return total
+        }, 0)
+
     }
 
     norm() {
-        return this.array.reduce((total, index) => {
+        return this.vectorArray.reduce((total, index) => {
             return total += index * index
         }, 0)
     }
 
-    toString() {
-        return this.array.toString()
+    toString() { //will be refactored in scope of another commit
+        return this.vectorArray.toString()
     }
 }
-
+// (1,2,3) will be
 
 const a = new Vector([1, 2, 3])
 const b = new Vector([3, 3, 3])
 
 
-
 console.log(a.add(b))
-console.log(a.subtract(b))
-console.log(a.dot(b))
-console.log(b.norm())
-console.log(a.toString())
+// console.log(a.subtract(b))
+// console.log(a.dot(b))
+// console.log(b.norm())
+// console.log(a.toString())
