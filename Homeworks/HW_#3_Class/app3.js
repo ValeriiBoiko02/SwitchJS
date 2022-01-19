@@ -3,7 +3,7 @@ class Vector {
         this.vectorArray = vectorArray;
     }
 
-    #getValidVector(inputtedVector) {
+    #validateVector(inputtedVector) {
         if (inputtedVector.vectorArray.length === this.vectorArray.length) {
             return true
         }
@@ -11,23 +11,23 @@ class Vector {
     }
 
     add(inputtedVector) {
-        this.#getValidVector(inputtedVector)
-        return this.vectorArray.map(function (num, index) {
+        this.#validateVector(inputtedVector)
+        return this.vectorArray.map((num, index)=> {
             return inputtedVector.vectorArray[index] + num
         })
     }
 
     subtract(inputtedVector) {
-        this.#getValidVector(inputtedVector)
-        return this.vectorArray.map(function (num, index) {
-            return inputtedVector.vectorArray[index] - num
+        this.#validateVector(inputtedVector)
+        return this.vectorArray.map((num, index)=> {
+            return num - inputtedVector.vectorArray[index]
         })
     }
 
     dot(inputtedVector) {
-        this.#getValidVector(inputtedVector)
+        this.#validateVector(inputtedVector)
 
-        return this.vectorArray.map(function (num, index) {
+        return this.vectorArray.map((num, index)=> {
             return inputtedVector.vectorArray[index] * num
         }).reduce((total, index) => {
             total += index
@@ -43,8 +43,8 @@ class Vector {
     }
 
     toString() {
-        let arrayToString = this.vectorArray.toString()
-        return (`'(${arrayToString})'`)
+        let stringifiedVector = this.vectorArray.toString()
+        return (`'(${stringifiedVector})'`)
     }
 }
 
