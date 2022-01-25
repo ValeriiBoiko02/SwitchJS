@@ -1,9 +1,6 @@
 function myNew(constructor, ...args) {
-    const obj = {}
-
+    const obj = Object.create(constructor.prototype)
     constructor.apply(obj, args)
-    obj.__proto__ = constructor.prototype
-
     return obj
 }
 
@@ -18,4 +15,3 @@ Person.prototype.introduce = function () {
 
 const john = myNew(Person, "John", 30);
 console.log(john.introduce())
-
