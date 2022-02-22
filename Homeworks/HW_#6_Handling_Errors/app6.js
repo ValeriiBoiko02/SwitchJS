@@ -24,31 +24,12 @@ function readUser(json) {
 try {
     let user = readUser('{ "age": 25 }');
 } catch (err) {
-    if (err instanceof MyCustomError) {
         alert("Invalid data: " + err.message);
-    } else {
-        throw err;
-    }
 }
 
 // Check error for name
 try {
     let user = readUser('{ "name": "Jon" }');
 } catch (err) {
-    if (err instanceof MyCustomError) {
         alert("Invalid data: " + err.message);
-    } else {
-        throw err;
-    }
-}
-
-// Check error for JSON format
-try {
-    let user = readUser('age: 25 ');
-} catch (err) {
-    if (err instanceof MyCustomError) {
-        alert("Invalid data: " + err.message);
-    } else {
-        alert(new MyCustomError('JSON problem'))
-    }
 }
