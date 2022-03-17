@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+      "module": "CommonJS",
+      "target": "ES5",
+      "outDir": "./Homeworks/HW_#7_TypeScript/build"
+    },
+    "exclude": [
+      "../node_modules"
+    ]
+  }
+  
