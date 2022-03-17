@@ -20,7 +20,11 @@ var listOfProgrammers = [
     }
 ];
 var arrayOfSkills = listOfProgrammers.map(function (skillSet) {
-    new skills_1.Skill(skillSet.name, skillSet.experience, skillSet.isMastered);
+    return new skills_1.Skill(skillSet.name, skillSet.experience, skillSet.isMastered);
 });
+// let arrayOfSkills = []
+// listOfProgrammers.forEach(set => {
+//     arrayOfSkills.push(new Skill(set.name, set.experience, set.isMastered))
+// })
 var programmerJS_SkillClass = new programmer_1.ProgrammerJS(arrayOfSkills);
 programmerJS_SkillClass.showMySkills();

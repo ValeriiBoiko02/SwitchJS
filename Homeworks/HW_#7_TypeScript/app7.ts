@@ -21,9 +21,8 @@ let listOfProgrammers = [
 ]
 
 let arrayOfSkills = listOfProgrammers.map(skillSet => {
-    new Skill(skillSet.name, skillSet.experience, skillSet.isMastered)
+    return new Skill(skillSet.name, skillSet.experience, skillSet.isMastered)
 })
-
 
 let programmerJS_SkillClass = new ProgrammerJS(arrayOfSkills)
 programmerJS_SkillClass.showMySkills()
