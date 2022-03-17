@@ -2,7 +2,7 @@ import {ProgrammerJS} from './programmer'
 import {Skill} from "./skills";
 
 
-let listOfSkills = [
+let listOfProgrammers = [
     {
         name: 'TypeScript',
         experience: 2,
@@ -20,22 +20,10 @@ let listOfSkills = [
     }
 ]
 
-let arrayOfSkills = []
-listOfSkills.forEach(set => {
-    arrayOfSkills.push(new Skill(set.name, set.experience, set.isMastered))
+let arrayOfSkills = listOfProgrammers.map(skillSet => {
+    new Skill(skillSet.name, skillSet.experience, skillSet.isMastered)
 })
 
-let arrayOfStrings = ['JS', 'TS', 'Node']
-
-/////////////////////////////////////////////////
 
 let programmerJS_SkillClass = new ProgrammerJS(arrayOfSkills)
 programmerJS_SkillClass.showMySkills()
-
-
-
-
-
-
-
-

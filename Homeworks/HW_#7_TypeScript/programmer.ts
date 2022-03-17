@@ -8,13 +8,13 @@ abstract class Programmer {
     abstract myProgramingLanguage(): void;
 }
 
-interface IProgrammerJS {
+
+interface IKnowledge {
     javaScriptKnowledge: boolean;
     typeScriptKnowledge: boolean;
-
 }
 
-export class ProgrammerJS<T> extends Programmer implements IProgrammerJS {
+export class ProgrammerJS<T> extends Programmer implements IKnowledge {
     javaScriptKnowledge: true;
     typeScriptKnowledge: true;
 
