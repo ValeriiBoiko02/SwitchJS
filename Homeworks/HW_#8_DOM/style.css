@@ -1,0 +1,21 @@
+table{
+    border: 5px solid;
+    border-collapse: collapse;
+    margin: 0 auto;
+    background: darkturquoise;
+}
+td {
+    border: 5px solid lightslategrey;
+    border-collapse: collapse;
+    width: 50px;
+    font-size: 25px;
+}
+body{
+    background: lightcyan;
+}
+.hidden{
+    background-color: gainsboro;
+}
+.hovered{
+    background-color: gainsboro;
+}
